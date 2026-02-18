@@ -91,7 +91,8 @@ class KnowledgeBase:
         
         # TODO: Initialize ChromaDB client (in-memory for this workshop)
         # In production, you'd use persistent storage
-        self.client = chromadb.Client()
+        # Using EphemeralClient for in-memory (same as old Client but updated API)
+        self.client = chromadb.EphemeralClient()
         
         # TODO: Initialize embedding function
         # This converts text → 384-dimensional vectors!
